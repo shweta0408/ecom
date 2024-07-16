@@ -94,8 +94,24 @@ const products = [
 
   {
     id: 12,
-    title: 'Product 11',
-    price: '$60',
+    title: 'Product 12',
+    price: '$30',
+    image: 'https://via.placeholder.com/150',
+    categoryId: 4,
+  },
+
+  {
+    id: 13,
+    title: 'Product 13',
+    price: '$80',
+    image: 'https://via.placeholder.com/150',
+    categoryId: 4,
+  },
+
+  {
+    id: 14,
+    title: 'Product 14',
+    price: '$160',
     image: 'https://via.placeholder.com/150',
     categoryId: 4,
   },

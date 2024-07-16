@@ -1,8 +1,6 @@
-// src/components/ProductCard.tsx
-
 import React, { useState } from 'react';
 import { FaHeart, FaRegHeart, FaCartPlus } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {
   title: string;
@@ -13,6 +11,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ title, price, image }) => {
   const [quantity, setQuantity] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
+  const navigate = useNavigate();
 
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -30,43 +29,56 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, image }) => {
     console.log(`Added ${quantity} of ${title} to cart`);
   };
 
+  const handleCheckout = () => {
+    navigate('/cart');
+  };
+
   return (
-    <div className="p-4 bg-lime-100 rounded-lg shadow-md ">
+    <div className="p-4 bg-lime-100 rounded-lg shadow-md">
       <img
         src={image}
         alt={title}
         className="w-full h-40 object-cover rounded-t-lg"
       />
-      <div className="mt-4 ">
+      <div className="mt-4">
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="mt-2 text-gray-600">{price}</p>
-        <div className="flex items-center mt-2">
+        <div className="flex items-center justify-between mt-2">
+          <div className="flex items-center">
+            <button
+              onClick={decreaseQuantity}
+              className="text-red-500 text-lg mr-2"
+            >
+              -
+            </button>
+            <span className="mx-4">{quantity}</span>
+            <button
+              onClick={increaseQuantity}
+              className="text-green-500 text-lg ml-2"
+            >
+              +
+            </button>
+          </div>
           <button
-            onClick={decreaseQuantity}
-            className="text-red-500 text-lg mr-2"
+            onClick={toggleFavorite}
+            className="flex justify-end text-red-500 hover:text-red-600"
           >
-            -
-          </button>
-          <span className="mx-4">{quantity}</span>
-          <button
-            onClick={increaseQuantity}
-            className="text-green-500 text-lg ml-2"
-          >
-            +
+            {isFavorite ? <FaHeart /> : <FaRegHeart />}
           </button>
         </div>
+
         <div className="flex items-center justify-between mt-4">
           <button
             onClick={addToCart}
-            className="flex items-center p-2 bg-lime-700 text-white rounded hover:bg-lime-900"
+            className="flex items-center p-2 bg-lime-700 text-white rounded hover:bg-lime-900 mr-2"
           >
             <FaCartPlus className="mr-2" /> Add to Cart
           </button>
           <button
-            onClick={toggleFavorite}
-            className="text-red-500 hover:text-red-600"
+            onClick={handleCheckout}
+            className="flex items-center p-2 bg-lime-700 text-white rounded hover:bg-lime-900"
           >
-            {isFavorite ? <FaHeart /> : <FaRegHeart />}
+            Check Out
           </button>
         </div>
       </div>

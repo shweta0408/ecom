@@ -43,7 +43,7 @@ export const Header = ({ navigation }) => {
                 to={item.scrollTo}
                 smooth={true}
                 duration={500}
-                className="text-lg font-semibold leading-6 text-lime-700 cursor-pointer"
+                className="text-lg font-bold leading-6 text-lime-700  cursor-pointer"
               >
                 {item.name}
               </Link>
@@ -51,7 +51,7 @@ export const Header = ({ navigation }) => {
               <RouterLink
                 key={item.name}
                 to={item.href}
-                className="text-lg font-semibold leading-6 text-lime-700"
+                className="text-lg font-bold leading-6 text-lime-700  cursor-pointer"
               >
                 {item.name}
               </RouterLink>

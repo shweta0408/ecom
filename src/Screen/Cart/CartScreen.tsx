@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../../component/Header/Header';
+import { Link } from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/Home' },
@@ -19,9 +20,9 @@ const CartScreen = () => {
   );
 
   return (
-    <div>
+    <div id="cart">
       <Header navigation={navigation} />
-      <div className="container mx-auto px-4 mt-40" id="cart">
+      <div className="container mx-auto px-4 mt-40">
         <h1 className="text-3xl font-bold mb-6 text-lime-800">Shopping Cart</h1>
         <div className="bg-lime-100 rounded-lg shadow-md overflow-hidden">
           <div className="divide-y divide-gray-200">
@@ -49,9 +50,12 @@ const CartScreen = () => {
             </div>
           </div>
           <div className="flex justify-end p-6">
-            <button className="bg-lime-700 hover:bg-lime-900 text-white py-2 px-6 rounded-lg shadow-md">
-              Proceed to Checkout
-            </button>
+            <Link
+              to="/checkout"
+              className="w-full sm:w-56 rounded-md bg-lime-200 px-4 py-3 text-center font-bold  bg-lime-700 text-white rounded hover:bg-lime-900"
+            >
+              Proceed To Checkout
+            </Link>
           </div>
         </div>
       </div>

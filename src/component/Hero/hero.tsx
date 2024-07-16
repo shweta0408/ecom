@@ -11,7 +11,7 @@ export const HeroBanner = () => {
           <div className="mt-8 sm:mt-10 flex items-center justify-center gap-x-6">
             <Link
               to="/productScreen"
-              className="w-full sm:w-56 rounded-md bg-lime-200 px-4 py-3 text-2xl font-bold text-lime-700 shadow-sm hover:bg-lime-300 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="w-full sm:w-56 rounded-md bg-lime-200 px-4 py-3 text-2xl font-bold  bg-lime-700 text-white rounded hover:bg-lime-900"
             >
               Buy Now
             </Link>
