@@ -9,7 +9,7 @@ export const Header = ({ navigation }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-lime-200">
+    <header className="fixed inset-x-0 top-0 z-50 bg-lime-200 mb-40">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <a href="#">
           <img alt="Logo" src="/src/assets/logo2.png" className="w-24 h-24" />

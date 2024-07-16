@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const HeroBanner = () => {
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-8 flex flex-col items-center justify-center mt-20 max-w-6xl w-full">
+    <div className="relative isolate px-6 pt-14 lg:px-8 flex flex-col items-center justify-center max-w-6xl w-full mt-0">
       <div className="mx-auto py-16 sm:py-32 lg:py-24 flex flex-col sm:flex-row items-center justify-between">
         <div className="text-center sm:w-2/5">
           <h1 className="text-4xl font-bold tracking-tight text-lime-700 sm:text-5xl">

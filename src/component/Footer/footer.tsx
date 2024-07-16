@@ -10,12 +10,6 @@ function Footer() {
       style={{ justifyContent: 'center', alignItems: 'center' }}
     >
       <div className="max-w-6xl w-full flex flex-col ">
-        <img
-          src="./src/assets/logo2.png"
-          alt="Logo"
-          className="h-20 w-28 mx-auto mb-6"
-        />
-
         <div className="mx-auto px-4 flex flex-col sm:flex-row items-center justify-between mb-10 mt-6 w-full">
           <div className="flex items-center justify-center sm:justify-start mb-4 sm:mb-0">
             <span className="text-lg">
